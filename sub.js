@@ -14,6 +14,8 @@ function showMovie(movie){
 
     document.querySelector(".subpage_content").textContent = movie.content.rendered;
 
+    document.querySelector(".date").textContent = movie.event_date;
+
     //const img = document.querySelector("img.cover");
     //const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
 
