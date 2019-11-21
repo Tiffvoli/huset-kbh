@@ -177,8 +177,8 @@ article {
     font-size: 1.4rem;
     text-align: center;
 }
-.location, .date, .time, .price{
-    margin-top: 0.5rem;
+.location, .date, .time, .price, .ticket{
+    margin-top: 0.1rem;
 }
 
 .cell-5 {

@@ -93,7 +93,13 @@ function showMovie(movie){
 
     document.querySelector(".subpage_content").innerHTML = movie.content.rendered;
 
-    //document.querySelector(".date").innerHTML = movie.event_date;
+    document.querySelector(".subpage_date").textContent = movie.event_date;
+
+    document.querySelector(".subpage_time").textContent = movie.movie_time+"p.m";
+
+    document.querySelector(".subpage_price").textContent = movie.ticket_price+"kr";
+
+    document.querySelector(".subpage_location").textContent = movie.location;
 
     const img = document.querySelector("img.subpage_cover");
     const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
@@ -116,7 +122,13 @@ function showPost(post){
     title.textContent = post.title.rendered;
 
     const date = postCopy.querySelector(".date");
-    date.innerHTML = post.event_date;
+    date.textContent = post.event_date;
+
+    const time = postCopy.querySelector(".time");
+    time.textContent = post.movie_time+"p.m";
+
+    const price = postCopy.querySelector(".price");
+    price.textContent = post.ticket_price+"kr";
 
     const location = postCopy.querySelector(".location");
     location.innerHTML = post.location;
