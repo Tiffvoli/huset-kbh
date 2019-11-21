@@ -361,9 +361,10 @@ input{
     background-color: rgba(0,0,0,0.8);
     color: white;
     border-bottom-color: white;
-    border-top-color: rgba(0,0,0,0.8);
-    border-left-color: rgba(0,0,0,0.8);
-    border-right-color: rgba(0,0,0,0.8);
+    border-style: solid;
+    border-top-color: rgba(0,0,0,0.0);
+    border-left-color: rgba(0,0,0,0.0);
+    border-right-color: rgba(0,0,0,0.0);
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -372,6 +373,9 @@ nav a{
     color: white;
     text-decoration: none;
     padding: 0.5rem;
-    font-size: 0.5rem;
-
+    font-size: 0.8rem;
+}
+.categories_nav{
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
