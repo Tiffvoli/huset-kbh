@@ -144,16 +144,30 @@ body{
 /*------------------------------Content Box-------------------------------*/
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns:  1fr;
+    grid-template-rows: auto;
+    text-align: center;
   background: black;
 }
-
-
 .content{
     height: 100%;
     font-family: var(--primary-font);
     text-align: center;
 }
+#posts {
+    grid-column: 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 2rem;
+}
+
+/*article styling */
+article {
+    display: flex;
+    flex-flow: column;
+}
+
 .content img{
     width: 100%;
 }
@@ -317,4 +331,12 @@ body{
     font-family: var(--primary-font);
     margin-top: 12vw;
     color: black;
+}
+
+input{
+    background-color: white;
+    margin-top: 1rem;
+}
+
+form{
 }

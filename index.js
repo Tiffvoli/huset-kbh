@@ -32,6 +32,19 @@ function getNavigation(){
 }
 
 
+//categories function
+function addLink(oneItem){
+    //console.log(oneItem.name)
+
+    if(oneItem === 14 && oneItem.count > 0){
+    const link = document.createElement("a");
+    link.textContent = oneItem.name;
+    link.setAttribute("href", "index.html")
+    document.querySelector("nav").appendChild(link);
+}
+}
+
+
 //search function
 function getSearchData(){
     const urlParams = new URLSearchParams(window.location.search);
@@ -68,12 +81,12 @@ function showMovie(movie){
     console.log(movie)
     document.querySelector(".subpage_title").textContent = movie.title.rendered;
 
-    document.querySelector(".subpage_content").textContent = movie.content.rendered;
+    document.querySelector(".subpage_content").innerHTML = movie.content.rendered;
 
-    document.querySelector(".date").textContent = movie.event_date;
+    //document.querySelector(".date").textContent = movie.event_date;
 
-    //const img = document.querySelector("img.cover");
-    //const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
+    const img = document.querySelector("img.cover");
+    const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
 
 }
 }
