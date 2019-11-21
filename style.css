@@ -181,9 +181,10 @@ article {
 .title{
     font-family: var(--secondary-font);
     font-size: 1.4rem;
+    text-align: center;
 }
 .location, .date, .time, .price{
-    margin-top:
+    margin-top: 0.5rem;
 }
 
 .cell-5 {
@@ -309,6 +310,26 @@ article {
 }
 .cell-12 img{
     width: 100%
+}
+/*---------------------------Calendar Style-----------------------------*/
+   .content_calendar{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    background-color: black;
+    font-family: var(--primary-font);
+}
+
+.calendar_text{
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+}
+
+.calendar_box{
+    background-color: white;
+    height: 0.8rem;
+    width: 90%;
+    margin-bottom: 28.5rem;
+
 }
 
 /*-----------------Subpage Style-------------------*/
