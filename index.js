@@ -7,13 +7,17 @@ function init(){
     const search = urlParams.get("search");
 
     const id = urlParams.get("id");
+    const category = urlParams.get("category");
 
-    if(search){
+    if(search){ //if search has a value
         console.log("this is a search result")
         getSearchData();
-    }else if(id){
+    }else if(id){ //if id has a value
         getSingleMovie();
-    } else{
+    }else if(category){
+        //category
+        getCategoryData(category)
+    } else{ //if neither is true, load this
         console.log("NOT searching")
         getData();
     }
@@ -36,10 +40,10 @@ function getNavigation(){
 function addLink(oneItem){
     //console.log(oneItem.name)
 
-    if(oneItem === 14 && oneItem.count > 0){
+    if(oneItem.parent === 14 && oneItem.count > 0){
     const link = document.createElement("a");
     link.textContent = oneItem.name;
-    link.setAttribute("href", "index.html")
+    link.setAttribute("href", "category.html?category="+oneItem.id)
     document.querySelector("nav").appendChild(link);
 }
 }
@@ -64,13 +68,19 @@ function getData(){
     .then(handleData)
 }
 
+function getCategoryData(catId){
+    console.log(catId)
+    fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/movies?_embed&categories="+catI)
+    .then(res=>res.json())
+    .then(handleData)
+}
 
 //subpage articles
 function getSingleMovie(){
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
-console.log(id)
+//console.log(id)
 
 fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/movies/"+id)
 .then(res=>res.json())
@@ -78,14 +88,14 @@ fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/movies/"+id)
 
 
 function showMovie(movie){
-    console.log(movie)
+   // console.log(movie)
     document.querySelector(".subpage_title").textContent = movie.title.rendered;
 
     document.querySelector(".subpage_content").innerHTML = movie.content.rendered;
 
     //document.querySelector(".date").textContent = movie.event_date;
 
-    const img = document.querySelector("img.cover");
+    const img = document.querySelector("img.subpage_cover");
     const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
 
 }
@@ -97,13 +107,19 @@ function handleData(myData){
     myData.forEach(showPost)
 }
 function showPost(post){
-    console.log(post)
+   // console.log(post)
 
     const template = document.querySelector(".postTemplate").content;
     const postCopy = template.cloneNode(true);
 
     const title = postCopy.querySelector(".title");
     title.textContent = post.title.rendered;
+
+    const date = postCopy.querySelector(".date");
+    date.textContent = post.event_date;
+
+    //const location = postCopy.querySelector(".location");
+    //location.textContent = post.location;
 
     const img = postCopy.querySelector("img.cover");
     const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;

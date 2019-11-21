@@ -143,8 +143,8 @@ body{
 
 /*------------------------------Content Box-------------------------------*/
 .content {
-  display: grid;
-    grid-template-columns:  1fr;
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     text-align: center;
   background: black;
@@ -154,12 +154,19 @@ body{
     font-family: var(--primary-font);
     text-align: center;
 }
+.content_calendar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: black;
+    font-family: var(--primary-font);
+
+}
 #posts {
     grid-column: 1;
     grid-row: 3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 /*article styling */
@@ -175,18 +182,10 @@ article {
     font-family: var(--secondary-font);
     font-size: 1.4rem;
 }
-.location{
-
+.location, .date, .time, .price{
+    margin-top:
 }
-.date{
 
-}
-.time{
-
-}
-.price{
-
-}
 .cell-5 {
     padding: 2vw;
 }
@@ -324,7 +323,17 @@ article {
     font-size: 1.2rem;
     font-family: var(--primary-font);
     color: black;
-    width: 200%;
+    width: 100%;
+    margin-top: 1rem;
+}
+.subpage_cover{
+    width: 25%;
+}
+.subpage_box{
+    background-color: black;
+    height: 1vw;
+    width: 150%;
+    margin-bottom: 1vw;
 }
 
 .back{
