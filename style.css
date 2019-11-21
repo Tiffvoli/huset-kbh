@@ -154,13 +154,7 @@ body{
     font-family: var(--primary-font);
     text-align: center;
 }
-.content_calendar{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: black;
-    font-family: var(--primary-font);
 
-}
 #posts {
     grid-column: 1;
     grid-row: 3;
@@ -364,9 +358,20 @@ article {
 }
 
 input{
-    background-color: white;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    border-bottom-color: white;
+    border-top-color: rgba(0,0,0,0.8);
+    border-left-color: rgba(0,0,0,0.8);
+    border-right-color: rgba(0,0,0,0.8);
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-form{
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 0.5rem;
+
 }

@@ -40,7 +40,7 @@ function getNavigation(){
 function addLink(oneItem){
     //console.log(oneItem.name)
 
-    if(oneItem.parent === 14 && oneItem.count > 0){
+    if(oneItem.parent === 18 && oneItem.count > 0){
     const link = document.createElement("a");
     link.textContent = oneItem.name;
     link.setAttribute("href", "category.html?category="+oneItem.id)
@@ -70,7 +70,7 @@ function getData(){
 
 function getCategoryData(catId){
     console.log(catId)
-    fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/movies?_embed&categories="+catI)
+    fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/movies?_embed&categories="+catId)
     .then(res=>res.json())
     .then(handleData)
 }
@@ -93,7 +93,7 @@ function showMovie(movie){
 
     document.querySelector(".subpage_content").innerHTML = movie.content.rendered;
 
-    //document.querySelector(".date").textContent = movie.event_date;
+    //document.querySelector(".date").innerHTML = movie.event_date;
 
     const img = document.querySelector("img.subpage_cover");
     const imgPath = movie._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
@@ -107,7 +107,7 @@ function handleData(myData){
     myData.forEach(showPost)
 }
 function showPost(post){
-   // console.log(post)
+    console.log(post)
 
     const template = document.querySelector(".postTemplate").content;
     const postCopy = template.cloneNode(true);
@@ -116,10 +116,10 @@ function showPost(post){
     title.textContent = post.title.rendered;
 
     const date = postCopy.querySelector(".date");
-    date.textContent = post.event_date;
+    date.innerHTML = post.event_date;
 
-    //const location = postCopy.querySelector(".location");
-    //location.textContent = post.location;
+    const location = postCopy.querySelector(".location");
+    location.innerHTML = post.location;
 
     const img = postCopy.querySelector("img.cover");
     const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url;
