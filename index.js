@@ -17,10 +17,22 @@ function init(){
         console.log("NOT searching")
         getData();
     }
+    getNavigation()
 }
 
 
-//search
+//get categories for navigation
+function getNavigation(){
+    fetch("http://georgianadancu.com/wordpress/wp-json/wp/v2/categories?per_page=100")
+    .then(res=>res.json())
+    .then(data=> {
+    //console.log(data)
+    data.forEach(addLink)
+    })
+}
+
+
+//search function
 function getSearchData(){
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
@@ -87,8 +99,7 @@ function showPost(post){
 
     const a = postCopy.querySelector("a");
     a.href="sub.html?id="+post.id
-    //const content = postCopy.querySelector("section");
-    //content.innerHTML = post.content.rendered;
+
 
     document.querySelector("#posts").appendChild(postCopy)
 }

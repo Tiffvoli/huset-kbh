@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f0a3cb">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Huset</title>
+</head>
+
+<body>
+<div class="banner">
+  <div class="cell cell-1">
+  <img alt="" src="img/hus_1.png">
+  </div>
+
+  <div class="cell cell-2">
+      <div class="socials">
+      <a href="https://twitter.com/HusetKBH" target="_blank"><img src="img/twitter-01.png" alt="twitter"></a>
+      <a href="https://www.facebook.com/Huset.Koebenhavn" target="_blank"><img src="img/facebook-01.png" alt="facebook"></a>
+      <a href="https://instagram.com/husetkbh/" target="_blank"><img src="img/instagram-01.png" alt="instagram"></a>
+      <a href="https://www.flickr.com/photos/135006755@N04/" target="_blank"><img src="img/flickr-01.png" alt="flickr"></a>
+      </div>
+      <h1 class="announcement">NEW THIS WEEK</h1>
+      <div class="box"></div>
+    <!-- Slideshow container -->
+<div class="slideshow-container" style="width: 200%">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="img/movie_poster_1.jpg" alt="" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img/superheroes_banner.jpg" alt="" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="img/movie_poster_3.jpg" alt="" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<!-- The dots/circles -->
+<div style="text-align:center; width: 200%; position: relative">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+    </div>
+  <div class="cell cell-3">
+<!-- Nav Bar -->
+      <div class="dropdown">
+  <button class="mainmenubtn"><img src="img/menu-bar.png" alt="Menu Bar"></button>
+  <div class="dropdown-child">
+    <a href="index.html">Event</a>
+    <a href="calendar.html">Schedule</a>
+    <a href="location.html">Husets Biograf</a>
+    <a href="about.html">About Huset</a>
+    <a href="contact.html">Contact</a>
+  </div>
+      </div>
+  </div>
+  <div class="cell cell-4">
+  <img src="img/et_2.png" alt="">
+    </div>
+</div>
+
+<div class="content">
+
+<form action="search.html">
+    <input name="search" type="search">
+    <input type="submit" value="search">
+    </form>
+           <section id="posts"></section>
+
+    <template class="postTemplate">
+        <article>
+            <header>
+                <div class="img_container">
+                    <a href="sub.html?id=94" class="subpage"><img src="" alt="" class="cover"></a>
+                </div>
+                <div class="title">TITLE</div>
+            </header>
+            <div class="date">Date</div>
+            <div class="time">Time</div>
+            <div class="price">Price</div>
+            <div class="location">Location</div>
+        </article>
+    </template>
+    </div>
+ <script src="main.js"></script>
+ <script src="index.js"></script>
+</body>
+</html>

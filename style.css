@@ -305,18 +305,14 @@ body{
     color: black;
     width: 200%;
 }
-.subpage_content{
+
+.subpage_content, .subpage_date, .subpage_time, .subpage_price, .subpage_location{
     font-size: 1.2rem;
     font-family: var(--primary-font);
     color: black;
     width: 200%;
 }
-.subpage_date{
-    font-size: 1.2rem;
-    font-family: var(--primary-font);
-    color: black;
-    width: 200%;
-}
+
 .back{
     font-family: var(--primary-font);
     margin-top: 12vw;
